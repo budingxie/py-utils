@@ -16,19 +16,19 @@ public class TraceRunnable implements Runnable {
     private Runnable target;
 
     public TraceRunnable(Runnable target) {
-        this.tranceId = TraceUtil.get();
+        this.tranceId = UtilTrace.get();
         this.target = target;
     }
 
     @Override
     public void run() {
         try {
-            TraceUtil.set(this.tranceId);
-            MDC.put(TraceUtil.MDC_TRACE_ID, TraceUtil.get());
+            UtilTrace.set(this.tranceId);
+            MDC.put(UtilTrace.MDC_TRACE_ID, UtilTrace.get());
             this.target.run();
         } finally {
-            MDC.remove(TraceUtil.MDC_TRACE_ID);
-            TraceUtil.remove();
+            MDC.remove(UtilTrace.MDC_TRACE_ID);
+            UtilTrace.remove();
         }
     }
 

@@ -9,9 +9,7 @@ import cn.hutool.core.util.IdUtil;
  * @version 1.0.0
  * @date 2020/11/12
  */
-public class TraceUtil {
-
-    public static final String REQUEST_HEADER_TRACE_ID = "com.ms.header.trace.id";
+public class UtilTrace {
 
     public static final String MDC_TRACE_ID = "trace_id";
 
