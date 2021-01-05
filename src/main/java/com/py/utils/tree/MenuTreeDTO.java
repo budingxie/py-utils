@@ -17,12 +17,13 @@ public class MenuTreeDTO implements Serializable {
     public MenuTreeDTO() {
     }
 
-    public MenuTreeDTO(Integer id, String name, Integer pid, Integer order, String url) {
+    public MenuTreeDTO(Integer id, String name, Integer pid, Integer order, String url, String desc) {
         this.id = id;
         this.name = name;
         this.pid = pid;
         this.order = order;
         this.url = url;
+        this.desc = desc;
     }
 
     /**
@@ -77,6 +78,11 @@ public class MenuTreeDTO implements Serializable {
     private String url;
 
     /**
+     * 描述
+     */
+    private String desc;
+
+    /**
      * 子菜单
      */
     private List<MenuTreeDTO> children;
@@ -119,6 +125,14 @@ public class MenuTreeDTO implements Serializable {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public List<MenuTreeDTO> getChildren() {
